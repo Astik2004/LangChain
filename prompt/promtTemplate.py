@@ -11,5 +11,7 @@ prompt=PromptTemplate(
     template="Explain {language} in ten line for a {level} learner."
 )
 
-response=model.invoke(prompt.format(language="Java",level="beginner"))
+language=input("Enter the programming language: ")
+level=input("Enter the learner level (beginner, intermediate, advanced): ")
+response=model.invoke(prompt.format(language=language,level=level))
 print(response.content)

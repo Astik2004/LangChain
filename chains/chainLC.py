@@ -12,5 +12,7 @@ prompt2 = PromptTemplate.from_template("Summarize this text in 3 lines:\n{text}"
 chain=prompt1 | model | prompt2 | model
 
 topic=input("Enter the topic: ")
+
 response=chain.invoke({"topic": topic})
+
 print(response.content)
